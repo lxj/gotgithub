@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>6.4. SVN &mdash; GotGitHub v0.1 documentation</title>
+    <title>6.7. GitHub开源项目 &mdash; GotGitHub v0.1 documentation</title>
     <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../static/doctools.js"></script>
     <link rel="top" title="GotGitHub v0.1 documentation" href="../index.html" />
     <link rel="up" title="6. GitHub副产品" href="index.html" />
-    <link rel="next" title="6.5. Hg-Git" href="060-hg-git.html" />
-    <link rel="prev" title="6.3. Shop" href="040-shop.html" /> 
+    <link rel="next" title="7. 附录A：安装Git" href="../10-appendix/index.html" />
+    <link rel="prev" title="6.6. 客户端工具" href="060-client-tools.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="060-hg-git.html" title="6.5. Hg-Git"
+          <a href="../10-appendix/index.html" title="7. 附录A：安装Git"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="040-shop.html" title="6.3. Shop"
+          <a href="060-client-tools.html" title="6.6. 客户端工具"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">GotGitHub v0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">6. GitHub副产品</a> &raquo;</li> 
@@ -46,15 +46,29 @@
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6.7. GitHub开源项目</a><ul>
+<li><a class="reference internal" href="#gritruby-git">6.7.1. Grit和ruby-git</a></li>
+<li><a class="reference internal" href="#gollum">6.7.2. Gollum</a></li>
+<li><a class="reference internal" href="#jekyll">6.7.3. Jekyll</a></li>
+<li><a class="reference internal" href="#resque">6.7.4. Resque</a></li>
+<li><a class="reference internal" href="#github-servics">6.7.5. GitHub-servics</a></li>
+<li><a class="reference internal" href="#api">6.7.6. API</a></li>
+<li><a class="reference internal" href="#rubygems">6.7.7. rubygems</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="040-shop.html"
-                        title="previous chapter">6.3. Shop</a></p>
+  <p class="topless"><a href="060-client-tools.html"
+                        title="previous chapter">6.6. 客户端工具</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="060-hg-git.html"
-                        title="next chapter">6.5. Hg-Git</a></p>
+  <p class="topless"><a href="../10-appendix/index.html"
+                        title="next chapter">7. 附录A：安装Git</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../sources/06-side-projects/050-svn.txt"
+    <li><a href="../sources/06-side-projects/070-opensource.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -78,10 +92,29 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="svn">
-<h1>6.4. SVN<a class="headerlink" href="#svn" title="Permalink to this headline">¶</a></h1>
-<p>不是愚人节笑话哦。</p>
-<p>用SVN操作Git版本库。</p>
+  <div class="section" id="github">
+<h1>6.7. GitHub开源项目<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gritruby-git">
+<h2>6.7.1. Grit和ruby-git<a class="headerlink" href="#gritruby-git" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="gollum">
+<h2>6.7.2. Gollum<a class="headerlink" href="#gollum" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="jekyll">
+<h2>6.7.3. Jekyll<a class="headerlink" href="#jekyll" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="resque">
+<h2>6.7.4. Resque<a class="headerlink" href="#resque" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="github-servics">
+<h2>6.7.5. GitHub-servics<a class="headerlink" href="#github-servics" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="api">
+<h2>6.7.6. API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="rubygems">
+<h2>6.7.7. rubygems<a class="headerlink" href="#rubygems" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -97,10 +130,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="060-hg-git.html" title="6.5. Hg-Git"
+          <a href="../10-appendix/index.html" title="7. 附录A：安装Git"
              >next</a> |</li>
         <li class="right" >
-          <a href="040-shop.html" title="6.3. Shop"
+          <a href="060-client-tools.html" title="6.6. 客户端工具"
              >previous</a> |</li>
         <li><a href="../index.html">GotGitHub v0.1 documentation</a> &raquo;</li>
           <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li> 
