@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>6.3. GitHub:Shop &mdash; GotGitHub 0.1 documentation</title>
+    <title>6.4.4. GitHub Open Source &mdash; GotGitHub 0.1 documentation</title>
     
     <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -29,9 +29,9 @@
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
     <link rel="top" title="GotGitHub 0.1 documentation" href="../index.html" />
-    <link rel="up" title="6. GitHub副产品" href="index.html" />
-    <link rel="next" title="6.4. 用SVN操作GitHub" href="040-svn.html" />
-    <link rel="prev" title="6.2. GitHub:Jobs" href="020-jobs.html" /> 
+    <link rel="up" title="6.4. 其他" href="others.html" />
+    <link rel="next" title="7. 附录：GitHub支持的标记语言" href="../20-appendix/index.html" />
+    <link rel="prev" title="6.4.3. GitHub短URL服务" href="short-url.html" /> 
   </head>
   <body>
     <div id='header'>
@@ -56,26 +56,41 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="040-svn.html" title="6.4. 用SVN操作GitHub"
+          <a href="../20-appendix/index.html" title="7. 附录：GitHub支持的标记语言"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="020-jobs.html" title="6.2. GitHub:Jobs"
+          <a href="short-url.html" title="6.4.3. GitHub短URL服务"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">GotGitHub 0.1 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">6. GitHub副产品</a> &raquo;</li> 
+          <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li>
+          <li><a href="others.html" accesskey="U">6.4. 其他</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6.4.4. GitHub Open Source</a><ul>
+<li><a class="reference internal" href="#gritruby-git">6.4.4.1. Grit和ruby-git</a></li>
+<li><a class="reference internal" href="#gollum">6.4.4.2. Gollum</a></li>
+<li><a class="reference internal" href="#jekyll">6.4.4.3. Jekyll</a></li>
+<li><a class="reference internal" href="#resque">6.4.4.4. Resque</a></li>
+<li><a class="reference internal" href="#github-servics">6.4.4.5. GitHub-servics</a></li>
+<li><a class="reference internal" href="#api">6.4.4.6. API</a></li>
+<li><a class="reference internal" href="#rubygems">6.4.4.7. rubygems</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="020-jobs.html"
-                        title="previous chapter">6.2. GitHub:Jobs</a></p>
+  <p class="topless"><a href="short-url.html"
+                        title="previous chapter">6.4.3. GitHub短URL服务</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="040-svn.html"
-                        title="next chapter">6.4. 用SVN操作GitHub</a></p>
+  <p class="topless"><a href="../20-appendix/index.html"
+                        title="next chapter">7. 附录：GitHub支持的标记语言</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../sources/06-side-projects/030-shop.txt"
+    <li><a href="../sources/06-side-projects/opensource.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -99,38 +114,29 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="github-shop">
-<h1>6.3. GitHub:Shop<a class="headerlink" href="#github-shop" title="Permalink to this headline">¶</a></h1>
-<p>GitHub商店 <a class="footnote-reference" href="#id4" id="id1">[1]</a> 销售着一些你在其他地方买不到的小东西——如印着GitHub吉祥物Octocat的纪念品，图6-14展示的就是一款印着Octocat的杯子。</p>
-<div class="figure">
-<a class="reference internal image-reference" href="../images/shop-octocat-mug.jpg"><img alt="../images/shop-octocat-mug.jpg" src="../images/shop-octocat-mug.jpg" /></a>
-<p class="caption">图6-14：印着Octocat吉祥物的杯子</p>
+  <div class="section" id="github-open-source">
+<h1>6.4.4. GitHub Open Source<a class="headerlink" href="#github-open-source" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gritruby-git">
+<h2>6.4.4.1. Grit和ruby-git<a class="headerlink" href="#gritruby-git" title="Permalink to this headline">¶</a></h2>
 </div>
-<p>图6-15则是GitHub热卖的一款体恤的前后两面的图案设计 <a class="footnote-reference" href="#id5" id="id2">[2]</a> 。体恤前面印着GitHub社区编程最核心的理念（fork you），体恤后面则可以用记号笔写下你在GitHub上的主页地址。</p>
-<div class="figure">
-<a class="reference internal image-reference" href="../images/shop-fork-you-shirt.png"><img alt="../images/shop-fork-you-shirt.png" src="../images/shop-fork-you-shirt.png" /></a>
-<p class="caption">图6-15：超酷的GitHub体恤</p>
+<div class="section" id="gollum">
+<h2>6.4.4.2. Gollum<a class="headerlink" href="#gollum" title="Permalink to this headline">¶</a></h2>
 </div>
-<p>GitHub商店实际上是架设于Shopify <a class="footnote-reference" href="#id6" id="id3">[3]</a> 电子商务网站上的网店。GitHub商店并非GitHub主业，销售纪念品可以增强GitHub用户的认同感，而GitHub粉丝可以购买一项“装备”让自己看起来更酷。</p>
-<hr class="docutils" />
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://shop.github.com/">http://shop.github.com/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://github.com/blog/676-fork-you">https://github.com/blog/676-fork-you</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://www.shopify.com/">http://www.shopify.com/</a></td></tr>
-</tbody>
-</table>
+<div class="section" id="jekyll">
+<h2>6.4.4.3. Jekyll<a class="headerlink" href="#jekyll" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="resque">
+<h2>6.4.4.4. Resque<a class="headerlink" href="#resque" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="github-servics">
+<h2>6.4.4.5. GitHub-servics<a class="headerlink" href="#github-servics" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="api">
+<h2>6.4.4.6. API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="rubygems">
+<h2>6.4.4.7. rubygems<a class="headerlink" href="#rubygems" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -146,13 +152,14 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="040-svn.html" title="6.4. 用SVN操作GitHub"
+          <a href="../20-appendix/index.html" title="7. 附录：GitHub支持的标记语言"
              >next</a> |</li>
         <li class="right" >
-          <a href="020-jobs.html" title="6.2. GitHub:Jobs"
+          <a href="short-url.html" title="6.4.3. GitHub短URL服务"
              >previous</a> |</li>
         <li><a href="../index.html">GotGitHub 0.1 documentation</a> &raquo;</li>
-          <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li> 
+          <li><a href="index.html" >6. GitHub副产品</a> &raquo;</li>
+          <li><a href="others.html" >6.4. 其他</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
