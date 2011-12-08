@@ -234,28 +234,40 @@ $ git clone -b gh-pages origin/gh-pages</pre>
 <div class="section" id="jekyll">
 <h2>3.5.4. 使用Jekyll维护网站<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
 <p>Jekyll是由Tom Preston-Werner（GitHub创始人之一）开发的静态网站生成软件，支持博客及网页模版。使用Jekyll，可以直接使用Markdown或其他标记语言撰写页面及博客，当GitHub托管的版本库更新后，GitHub会自动运行Jekyll将标记语言撰写的文件转换为网页。</p>
-<p>Jekyll用Ruby语言开发，项目在GitHub的托管地址： <a class="reference external" href="http://github.com/mojombo/jekyll/">http://github.com/mojombo/jekyll/</a> ，专有的URL地址为： <a class="reference external" href="http://jekyllrb.com/">http://jekyllrb.com/</a> 。安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。</p>
+<p>Jekyll用Ruby语言开发，项目在GitHub的托管地址： <a class="reference external" href="http://github.com/mojombo/jekyll/">http://github.com/mojombo/jekyll/</a> ，专有的URL地址为： <a class="reference external" href="http://jekyllrb.com/">http://jekyllrb.com/</a> 。</p>
+<p>安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。</p>
 <div class="highlight-python"><pre>$ gem install jekyll</pre>
 </div>
-<p>如果安装过程因编译扩展模组遇到错误，可能是因为尚未安装所需的头文件。对于Debian Linux、Ubuntu等可以用如下方法安装所需软件包：</p>
+<p>如果安装过程因编译扩展模组遇到错误，可能是因为尚未安装所需的头文件，需要进行如下操作：</p>
+<ul>
+<li><p class="first">对于Debian Linux、Ubuntu等可以用如下方法安装所需软件包：</p>
 <div class="highlight-python"><pre>$ sudo apt-get install ruby1.8-dev</pre>
 </div>
-<p>如果是Red Hat、CentOS或Fedora等系统，使用如下命令安装：</p>
+</li>
+<li><p class="first">如果是Red Hat、CentOS或Fedora等系统，使用如下命令安装：</p>
 <div class="highlight-python"><pre>$ sudo yum install ruby-devel</pre>
 </div>
-<p>对于Mac OSX，可能需要更新RubyGems，如下：</p>
+</li>
+<li><p class="first">对于Mac OSX，可能需要更新RubyGems，如下：</p>
 <div class="highlight-python"><pre>$ sudo gem update --system</pre>
 </div>
+</li>
+</ul>
 <p>安装完毕，执行下面的命令显示Jekyll的版本：</p>
 <div class="highlight-python"><pre>$ jekyll -v
 Jekyll 0.11.0</pre>
 </div>
 <p>先来看一下作者Tom Preston-Werner在GitHub上的个人网站，看看是如何用Jekyll制作出来的。</p>
-<p>先克隆版本库：</p>
-<div class="highlight-python"><pre>$ git clone git://github.com/mojombo/mojombo.github.com.git
-$ cd mojombo.github.com</pre>
+<p>克隆版本库：</p>
+<div class="highlight-python"><pre>$ git clone git://github.com/mojombo/mojombo.github.com.git</pre>
 </div>
-<p>版本库根目录下的 <tt class="docutils literal"><span class="pre">index.html</span></tt> 文件不是一个完整的HTML文件，而是套用了模版（Liquid格式模版）的页面，对其关键内容添加行号显示如下：</p>
+<p>版本库包含的文件如下：</p>
+<div class="highlight-python"><pre>$ cd mojombo.github.com
+$ ls -F
+CNAME           _config.yml     _posts/         css/            index.html
+README.textile  _layouts/       atom.xml        images/         random/</pre>
+</div>
+<p>版本库根目录下的 <tt class="docutils literal"><span class="pre">index.html</span></tt> 文件不是一个普通的HTML文件，而是使用 Liquid 模版语言 <a class="footnote-reference" href="#id7" id="id5">[1]</a> 定义的页面。</p>
 <div class="highlight-python"><pre> 1 ---
  2 layout: default
  3 title: Tom Preston-Werner
@@ -271,21 +283,41 @@ $ cd mojombo.github.com</pre>
    ...
 63 &lt;/div&gt;</pre>
 </div>
-<p>第1-4行是YAML格式的文件头，确定模版的对应关系并设定相关属性。凡是设置有YAML文件头的文件（目录 <tt class="docutils literal"><span class="pre">_layouts</span></tt> 等除外）无论文件扩展名为何，都会在Jekyll编译时转换为对应的HTML文件。其中第2行含义为使用default模版（对应于的模版文件为 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> ），第3行设定本页面的标题。</p>
-<p>第6行开始的内容绝大多数是标准的HTML语法，其中夹杂少量liquid模版特有的语法。有着liquid或其他模版编程经验的用户，不难理解其中第9行和第11行出现的由”{%“和”%}“标识的指令是一个循环指令（for循环）用于逐条对博客进行相关操作，而第10行中由”{{“和”}}“标识的表达式则用于显示博文的日期、链接和标题。</p>
-<p>根目录下的 <tt class="docutils literal"><span class="pre">atom.xml</span></tt> 文件亦套用 <tt class="docutils literal"><span class="pre">default</span></tt> 模版。</p>
-<p>目录 <tt class="docutils literal"><span class="pre">_post</span></tt> 下的文件是博客文章列表，每个博文都以 <tt class="docutils literal"><span class="pre">&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;-&lt;blog-tiltle&gt;</span></tt> 格式的文件名命名。扩展名为 <tt class="docutils literal"><span class="pre">.md</span></tt> 的为Markdown格式，扩展名为 <tt class="docutils literal"><span class="pre">.textile</span></tt> 的为Textile格式。这些文件都类似如下格式的文件头：</p>
+<p>为方便描述为内容添加了行号，说明如下：</p>
+<ul>
+<li><p class="first">第1-4行是YAML格式的文件头，确定模版的对应关系并设定相关属性。</p>
+<p>凡是设置有YAML文件头的文件（目录 <tt class="docutils literal"><span class="pre">_layouts</span></tt> 除外）无论文件扩展名为何，都会在Jekyll编译时转换为对应的HTML文件。</p>
+</li>
+<li><p class="first">其中第2行含义为使用default模版。</p>
+<p>对应的模版文件为 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> 。</p>
+</li>
+<li><p class="first">第3行设定本页面的标题。</p>
+<p>在模版文件 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> 中用 <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">page.title</span> <span class="pre">}}</span></tt> 语法嵌入所设置的标题。下面是模版文件中部分内容：</p>
+<div class="highlight-python"><pre>&lt;head&gt;
+   &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+   &lt;title&gt;{{ page.title }}&lt;/title&gt;</pre>
+</div>
+</li>
+<li><p class="first">第6行开始的内容绝大多数是标准的HTML语法，其中夹杂少量Liquid模版特有的语法。</p>
+</li>
+<li><p class="first">第9行和第11行，对于有着Liquid或其他模版编程经验的用户，不难理解其中出现的由”{%“和”%}“标识的指令是一个循环指令（for循环），用于逐条对博客进行相关操作。</p>
+</li>
+<li><p class="first">第10行中由”{{“和”}}“标识的表达式则用于显示博文的日期、链接和标题。</p>
+</li>
+</ul>
+<p>非下划线（_）开头的文件和目录在编译时会直接进行编译，并将编译后的网页复制到目标文件夹（默认为 <tt class="docutils literal"><span class="pre">_site</span></tt> 目录）下。而以下划线开头的文件和目录有的直接忽略不予处理（如 <tt class="docutils literal"><span class="pre">_layouts</span></tt> 、 <tt class="docutils literal"><span class="pre">_site</span></tt> 目录等），有的则需要特殊处理（如 <tt class="docutils literal"><span class="pre">_post</span></tt> 目录）。</p>
+<p>目录 <tt class="docutils literal"><span class="pre">_post</span></tt> 用于保存博客条目，每个博客条目都以 <tt class="docutils literal"><span class="pre">&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;-&lt;blog-tiltle&gt;</span></tt> 格式的文件名命名。扩展名为 <tt class="docutils literal"><span class="pre">.md</span></tt> 的为Markdown格式，扩展名为 <tt class="docutils literal"><span class="pre">.textile</span></tt> 的为Textile格式。这些文件都包含类似的文件头：</p>
 <div class="highlight-python"><pre>---
 layout: post
 title: How I Turned Down $300,000 from Microsoft to go Full-Time on GitHub
 ---</pre>
 </div>
-<p>在 <tt class="docutils literal"><span class="pre">_layouts</span></tt> 目录下定义网页模版，其中文件 <tt class="docutils literal"><span class="pre">_layouts/post.html</span></tt> 是博客用到的模版，而 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> 是默认模版。模版文件亦是liquid格式文件。</p>
+<p>即博客使用文件 <tt class="docutils literal"><span class="pre">_layouts/post.html</span></tt> 作为页面模版，而不是 <tt class="docutils literal"><span class="pre">index.html</span></tt> 等文件所使用的 <tt class="docutils literal"><span class="pre">_layouts/default.html</span></tt> 模版。这些模版文件都采用Liquid模版语法。保存于 <tt class="docutils literal"><span class="pre">_post</span></tt> 目录下的博客文件编译后会以 <tt class="docutils literal"><span class="pre">&lt;YYYY&gt;/&lt;MM&gt;/&lt;DD&gt;/&lt;blog-title&gt;.html</span></tt> 文件名保存在输出目录中。</p>
 <p>在根目录下还有一个配置文件 <tt class="docutils literal"><span class="pre">_config.yml</span></tt> 用于覆盖Jekyll的默认设置，例如本版本库中的设置。</p>
 <div class="highlight-python"><pre>markdown: rdiscount
 pygments: true</pre>
 </div>
-<p>第1行设置使用rdiscount软件包作为Markdown的解析引擎，而非默认的Maruku。第2行开启pygments支持。关于该配置文件的详细介绍参见 <a class="reference external" href="https://github.com/mojombo/jekyll/wiki/configuration">Jekyll项目维基</a>  。</p>
+<p>第1行设置使用rdiscount软件包作为Markdown的解析引擎，而非默认的Maruku。第2行开启pygments支持。对于中文用户强烈建议通过配置文件 <tt class="docutils literal"><span class="pre">_config.yml</span></tt> 重设 markdown 解析引擎，默认的 Maruku 对中文支持不好，而使用 rdiscount 或 kramdown 均可。关于该配置文件的更多参数详见Jekyll项目维基 <a class="footnote-reference" href="#id8" id="id6">[2]</a>  。</p>
 <p>编译Jekyll编辑网站只需在根目录执行 <tt class="docutils literal"><span class="pre">jekyll</span></tt> 命令，下面的命令是GitHub更新网站所使用的默认指令。</p>
 <div class="highlight-python"><pre>$ jekyll --pygments --safe</pre>
 </div>
@@ -300,6 +332,20 @@ pygments: true</pre>
 <p class="caption">图3-20：Git Ready 网站</p>
 </div>
 <p>你相信这是一个用Jekyll制作的网站么？看看该网站对应的IP，会发现其指向的正是GitHub。研究GitHub上 <a class="reference external" href="https://github.com/gitready">gitready</a> 用户托管的版本库，会发现 <tt class="docutils literal"><span class="pre">en</span></tt> 版本库的 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支负责生成 <tt class="docutils literal"><span class="pre">gitready.com</span></tt> 网站， <tt class="docutils literal"><span class="pre">de</span></tt> 版本库的 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支负责生成德文网站 <tt class="docutils literal"><span class="pre">de.gitready.com</span></tt> ，等等。而 <tt class="docutils literal"><span class="pre">gitready</span></tt> 版本库则是各种语种网站的汇总。</p>
+<p>我的个人网站也使用Jekyll构建并托管在GitHub上，网址： <a class="reference external" href="http://www.worldhello.net/">http://www.worldhello.net/</a> 。</p>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td><a class="reference external" href="http://liquidmarkup.org/">http://liquidmarkup.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td><a class="reference external" href="https://github.com/mojombo/jekyll/wiki/configuration">https://github.com/mojombo/jekyll/wiki/configuration</a></td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
