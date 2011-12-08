@@ -28,6 +28,7 @@
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
     <link rel="top" title="GotGitHub" href="../index.html" />
     <link rel="up" title="4. 工作协同" href="index.html" />
     <link rel="next" title="4.6. 维基" href="060-wiki.html" />
@@ -50,24 +51,24 @@
     </div>
 
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
         <li class="right" >
           <a href="060-wiki.html" title="4.6. 维基"
-             accesskey="N">next</a> |</li>
+             accesskey="N">下一页</a> |</li>
         <li class="right" >
           <a href="040-code-review.html" title="4.4. 代码评审"
-             accesskey="P">previous</a> |</li>
+             accesskey="P">上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">4. 工作协同</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.5. 缺陷跟踪</a><ul>
 <li><a class="reference internal" href="#id2">4.5.1. 标签</a></li>
@@ -78,27 +79,27 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>上一个主题</h4>
   <p class="topless"><a href="040-code-review.html"
-                        title="previous chapter">4.4. 代码评审</a></p>
-  <h4>Next topic</h4>
+                        title="上一章">4.4. 代码评审</a></p>
+  <h4>下一个主题</h4>
   <p class="topless"><a href="060-wiki.html"
-                        title="next chapter">4.6. 维基</a></p>
-  <h3>This Page</h3>
+                        title="下一章">4.6. 维基</a></p>
+  <h3>本页</h3>
   <ul class="this-page-menu">
     <li><a href="../sources/04-work-with-others/050-issue.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">显示源代码</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>快速搜索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="搜索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    输入相关的模块，术语，类或者函数名称进行搜索
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -111,7 +112,7 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>4.5. 缺陷跟踪<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>4.5. 缺陷跟踪<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>缺陷跟踪（Bug Tracking）是软件研发流程中重要的一环，集项目需求管理和缺陷管理于一身，通过对研发工作流的控制帮助团队建立规范的研发体系。</p>
 <p>GitHub提供轻量级的缺陷跟踪模块，称为Issues。小巧、易用的Issues模块能与Pull Request紧密整合，是Pull Request工作流的有益补充。一个小型、管理文档和网页的项目，使用Pull Request往往就足够了。试想如果贡献者能够直接修改代码（Fork and edit this file）并通过Pull Request贡献给项目核心开发者，那么为什么还要通过Issues模块报告错误并由他人来更改呢？但是对于大型项目需要做需求管理，或者参与代码开发有难度，则非常有必要通过Issues模块启用缺陷跟踪系统，提供更多途径让贡献者参与到项目中来。</p>
 <p>缺陷跟踪可以通过项目的管理页面开启或关闭，如图4-46所示。</p>
@@ -120,7 +121,7 @@
 <p class="caption">图4-46：开启或关闭Issues模块</p>
 </div>
 <div class="section" id="id2">
-<h2>4.5.1. 标签<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>4.5.1. 标签<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>缺陷跟踪系统通常可用于管理多种不同类型的问题：需求、缺陷或其它，也可以通过项目不同模块、组件来为问题分类。GitHub在问题分类的实现上非常简单，通过标签（label）来为问题建立分类。</p>
 <p>开启Issues模块后，项目的菜单中多出一个“Issues”项，点击则进入问题浏览界面，如图4-47所示。左侧的边栏是问题过滤器，由上至下分为三个部分。最上面的过滤器根据问题的所有者对问题进行筛选，默认选择所有人的问题。中间的过滤器是根据里程碑对问题进行筛选，默认未选定任何里程碑（初始也未创建任何里程碑），不对问题进行里程碑过滤。最下面的过滤器依据问题标签对问题进行筛选，初始标签尚未创建。</p>
 <div class="figure">
@@ -140,7 +141,7 @@
 <p>标签过滤器下方的“Manage Labels”按钮用于管理标签，下面的输入框用于创建新的标签。</p>
 </div>
 <div class="section" id="id3">
-<h2>4.5.2. 里程碑<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>4.5.2. 里程碑<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>里程碑（Milestones）是项目进度管理重要工具。在传统项目管理中，里程碑对应于一个项目开发计划、一个软件版本；在敏捷项目管理中，里程碑对应于一个Sprint（冲刺）；在软件代码的版本库中则对应于一个标签（tag）或分支（branch）。</p>
 <p>在Issues模块中的“Milestones”页面用于里程碑管理。创建新的里程碑需要输入里程碑名称和里程碑的截止时间，如图4-50所示。</p>
 <div class="figure">
@@ -154,7 +155,7 @@
 </div>
 </div>
 <div class="section" id="issue">
-<h2>4.5.3. Issue的生命周期<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
+<h2>4.5.3. Issue的生命周期<a class="headerlink" href="#issue" title="永久链接至标题">¶</a></h2>
 <p>GitHub的Issues模块非常简单，对标签和里程碑进行简单的设置后，基本上就完成了Issues模块的配置工作，接下来就是如何创建和修改Issue，完成项目的缺陷跟踪和需求管理等，这才是Issues模块的主要工作。</p>
 <p>每个Issue都自己的生命周期，从问题的创建，到问题的指派，再到问题的解决，直至问题的关闭。图4-52就是普通贡献者身份为项目创建Issue。</p>
 <div class="figure">
@@ -235,7 +236,7 @@ $ git add -i</pre>
 </div>
 </div>
 <div class="section" id="pull-requstissue">
-<h2>4.5.4. Pull Requst也是Issue<a class="headerlink" href="#pull-requstissue" title="Permalink to this headline">¶</a></h2>
+<h2>4.5.4. Pull Requst也是Issue<a class="headerlink" href="#pull-requstissue" title="永久链接至标题">¶</a></h2>
 <p>Pull Request和Issue一样，也是一种对项目的反馈，而且是更为主动的反馈。GitHub的Issues模块将Pull Request也纳入到问题的管理之中，完美地将Pull Request整合到问题追踪的框架之中。</p>
 <p>为了弄清二者之间的关联，首先创建一个Pull Request。以非项目成员（用户 wangsheng <a class="footnote-reference" href="#id9" id="id6">[3]</a> ）的账号访问 <tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt> 项目，查看文件 <tt class="docutils literal"><span class="pre">README.mkd</span></tt> ，点击“Fork and edit this file”按钮快速创建项目分支，如图4-61所示。</p>
 <div class="figure">
@@ -316,17 +317,17 @@ $ git add -i</pre>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
         <li class="right" >
           <a href="060-wiki.html" title="4.6. 维基"
-             >next</a> |</li>
+             >下一页</a> |</li>
         <li class="right" >
           <a href="040-code-review.html" title="4.4. 代码评审"
-             >previous</a> |</li>
+             >上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" >4. 工作协同</a> &raquo;</li> 
       </ul>
@@ -336,9 +337,9 @@ $ git add -i</pre>
       <br />
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
-        &copy; Copyright 2011, Jiang Xin.
-      Last updated on 2011/12/08.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/08。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
   </body>

@@ -28,6 +28,7 @@
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
     <link rel="top" title="GotGitHub" href="../index.html" />
     <link rel="up" title="4. 工作协同" href="index.html" />
     <link rel="next" title="4.5. 缺陷跟踪" href="050-issue.html" />
@@ -50,24 +51,24 @@
     </div>
 
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
         <li class="right" >
           <a href="050-issue.html" title="4.5. 缺陷跟踪"
-             accesskey="N">next</a> |</li>
+             accesskey="N">下一页</a> |</li>
         <li class="right" >
           <a href="030-organization.html" title="4.3. 组织和团队"
-             accesskey="P">previous</a> |</li>
+             accesskey="P">上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">4. 工作协同</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.4. 代码评审</a><ul>
 <li><a class="reference internal" href="#id2">4.4.1. 提交评注</a></li>
@@ -76,27 +77,27 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>上一个主题</h4>
   <p class="topless"><a href="030-organization.html"
-                        title="previous chapter">4.3. 组织和团队</a></p>
-  <h4>Next topic</h4>
+                        title="上一章">4.3. 组织和团队</a></p>
+  <h4>下一个主题</h4>
   <p class="topless"><a href="050-issue.html"
-                        title="next chapter">4.5. 缺陷跟踪</a></p>
-  <h3>This Page</h3>
+                        title="下一章">4.5. 缺陷跟踪</a></p>
+  <h3>本页</h3>
   <ul class="this-page-menu">
     <li><a href="../sources/04-work-with-others/040-code-review.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">显示源代码</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>快速搜索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="搜索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    输入相关的模块，术语，类或者函数名称进行搜索
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -109,11 +110,11 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>4.4. 代码评审<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>4.4. 代码评审<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>针对项目的每一次Pull Request就相当于一次代码评审，评审以讨论的形式显示在Pull Request中。在Pull Request中还看到对应的提交（一个或多个），可以直接针对提交进行代码评注。对于采用集中式协同的项目，虽然很少用到Pull Request，但同样也可以使用代码评注。代码评注会触发通知邮件给项目的开发者。</p>
 <p>代码评注有两种形式，一种是针对整个提交的评注，另外一种是对代码的逐行评注。</p>
 <div class="section" id="id2">
-<h2>4.4.1. 提交评注<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.1. 提交评注<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>透过项目的提交历史，可以看到所选分支所有的历史提交，如图4-38所示。选择其中一个提交。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/commit-history.png"><img alt="../images/commit-history.png" src="../images/commit-history.png" /></a>
@@ -141,7 +142,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2>4.4.2. 逐行评注<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.2. 逐行评注<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>还是以 <tt class="docutils literal"><span class="pre">gotgit/gotgit</span></tt> 版本库中的提交为例，看一下GitHub支持的逐行评注功能，即针对提交中的任意一行添加评注。浏览提交，如图4-43所示，当鼠标至于任意一行代码时，在该行代码的左侧会显示一个添加注释的图标。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/commit-line-note-btn.png"><img alt="../images/commit-line-note-btn.png" src="../images/commit-line-note-btn.png" /></a>
@@ -180,17 +181,17 @@
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
         <li class="right" >
           <a href="050-issue.html" title="4.5. 缺陷跟踪"
-             >next</a> |</li>
+             >下一页</a> |</li>
         <li class="right" >
           <a href="030-organization.html" title="4.3. 组织和团队"
-             >previous</a> |</li>
+             >上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" >4. 工作协同</a> &raquo;</li> 
       </ul>
@@ -200,9 +201,9 @@
       <br />
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
-        &copy; Copyright 2011, Jiang Xin.
-      Last updated on 2011/12/08.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/08。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
   </body>

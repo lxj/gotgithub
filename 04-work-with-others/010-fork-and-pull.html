@@ -28,6 +28,7 @@
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
     <link rel="top" title="GotGitHub" href="../index.html" />
     <link rel="up" title="4. 工作协同" href="index.html" />
     <link rel="next" title="4.2. 共享版本库" href="020-shared-repo.html" />
@@ -50,24 +51,24 @@
     </div>
 
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
         <li class="right" >
           <a href="020-shared-repo.html" title="4.2. 共享版本库"
-             accesskey="N">next</a> |</li>
+             accesskey="N">下一页</a> |</li>
         <li class="right" >
           <a href="index.html" title="4. 工作协同"
-             accesskey="P">previous</a> |</li>
+             accesskey="P">上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">4. 工作协同</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.1. Fork + Pull模式</a><ul>
 <li><a class="reference internal" href="#id1">4.1.1. 版本库派生</a></li>
@@ -78,27 +79,27 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>上一个主题</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">4. 工作协同</a></p>
-  <h4>Next topic</h4>
+                        title="上一章">4. 工作协同</a></p>
+  <h4>下一个主题</h4>
   <p class="topless"><a href="020-shared-repo.html"
-                        title="next chapter">4.2. 共享版本库</a></p>
-  <h3>This Page</h3>
+                        title="下一章">4.2. 共享版本库</a></p>
+  <h3>本页</h3>
   <ul class="this-page-menu">
     <li><a href="../sources/04-work-with-others/010-fork-and-pull.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">显示源代码</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>快速搜索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="搜索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    输入相关的模块，术语，类或者函数名称进行搜索
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -111,12 +112,12 @@
           <div class="body">
             
   <div class="section" id="fork-pull">
-<h1>4.1. Fork + Pull模式<a class="headerlink" href="#fork-pull" title="Permalink to this headline">¶</a></h1>
+<h1>4.1. Fork + Pull模式<a class="headerlink" href="#fork-pull" title="永久链接至标题">¶</a></h1>
 <p>参与GitHub中的项目开发，最常用和推荐的首选方式是“Fork + Pull”模式。在“Fork + Pull”模式下，项目参与者不必向项目创建者申请提交权限，而是在自己的托管空间下建立项目的派生（Fork）。</p>
 <p>如果一个开源项目产生派生出另外的项目，通常意味着项目的分裂和开发团队的削弱，而GitHub中的项目派生则不会，而且正好相反，GitHub中的项目派生是项目壮大的体现。所有的派生项目都会有链接指向原始项目，派生项目没有独立的缺陷追踪系统（ISSUE），而是必须利用创建者本人的项目中的缺陷追踪系统。至于在派生项目中创建的提交，可以非常方便的利用GitHub的Pull Request工具向原始项目的维护者发送Pull Request。</p>
 <p>下面以GotGit版本库为例，介绍如何利用GitHub提供的Fork和Pull Request工具实现工作协同。</p>
 <div class="section" id="id1">
-<h2>4.1.1. 版本库派生<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>4.1.1. 版本库派生<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>GotGit版本库 <a class="footnote-reference" href="#id6" id="id2">[1]</a> 用于维护《Git权威指南》一书的官网和勘误，下面演示的勘误表修改是由王胜 <a class="footnote-reference" href="#id7" id="id3">[2]</a>
 通过GitHub之外的一个缺陷追踪平台报告的 <a class="footnote-reference" href="#id8" id="id4">[3]</a> 。他在报告中，甚至直接用GNU diff格式告诉我该如何修改。</p>
 <p>下面就以用户gotgithub身份，访问版本库 <a class="reference external" href="https://github.com/gotgit/gotgit/">https://github.com/gotgit/gotgit/</a> ，添加新的勘误。如图4-1所示，gotgit项目在之前的示例中已经被我们关注但尚未Fork。</p>
@@ -181,7 +182,7 @@ $ git commit -m "Fixed #3: should be 项目, not 项."</pre>
 </div>
 </div>
 <div class="section" id="pull-request">
-<h2>4.1.2. Pull Request<a class="headerlink" href="#pull-request" title="Permalink to this headline">¶</a></h2>
+<h2>4.1.2. Pull Request<a class="headerlink" href="#pull-request" title="永久链接至标题">¶</a></h2>
 <p>那么如何能够让gotgit原始项目的创建者知道这个派生项目及新的提交呢？GitHub提供的工具就是“Pull Request”。注意到图4-4中标记的按钮了么？点击该按钮进入Pull Request创建界面。</p>
 <p>在弹出的Pull Request创建界面中，点击菜单中的“Commits”，查看所包含的提交。如图4-5所示。</p>
 <div class="figure">
@@ -220,7 +221,7 @@ $ git commit -m "Fixed #3: should be 项目, not 项."</pre>
 </div>
 </div>
 <div class="section" id="id5">
-<h2>4.1.3. 手工合并<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>4.1.3. 手工合并<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>Pull Request提供的自动合并显示在提交日志中是什么样子的呢？以用户ossxp-com身份检出版本库，会看到用户wangsheng的提交已经合并到版本库中。</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:gotgit/gotgit.git
 $ cd gotgit
@@ -315,7 +316,7 @@ Fast-forward
 </ul>
 </div>
 <div class="section" id="fork-pull-request">
-<h2>4.1.4. 简化的 Fork + Pull Request<a class="headerlink" href="#fork-pull-request" title="Permalink to this headline">¶</a></h2>
+<h2>4.1.4. 简化的 Fork + Pull Request<a class="headerlink" href="#fork-pull-request" title="永久链接至标题">¶</a></h2>
 <p>GitHub提供了一个快捷的“Fork + Pull Request”操作。在介绍该操作前，先介绍一下GitHub的在线编辑文件功能。例如以gotgithub用户登录GitHub，访问一下地址：</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/gotgithub/gotgit/blob/master/errata.mkd">https://github.com/gotgithub/gotgit/blob/master/errata.mkd</a></li>
@@ -382,17 +383,17 @@ Fast-forward
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
         <li class="right" >
           <a href="020-shared-repo.html" title="4.2. 共享版本库"
-             >next</a> |</li>
+             >下一页</a> |</li>
         <li class="right" >
           <a href="index.html" title="4. 工作协同"
-             >previous</a> |</li>
+             >上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" >4. 工作协同</a> &raquo;</li> 
       </ul>
@@ -402,9 +403,9 @@ Fast-forward
       <br />
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
-        &copy; Copyright 2011, Jiang Xin.
-      Last updated on 2011/12/08.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/08。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
   </body>

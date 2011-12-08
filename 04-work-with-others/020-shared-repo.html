@@ -28,6 +28,7 @@
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
     <link rel="top" title="GotGitHub" href="../index.html" />
     <link rel="up" title="4. 工作协同" href="index.html" />
     <link rel="next" title="4.3. 组织和团队" href="030-organization.html" />
@@ -50,24 +51,24 @@
     </div>
 
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
         <li class="right" >
           <a href="030-organization.html" title="4.3. 组织和团队"
-             accesskey="N">next</a> |</li>
+             accesskey="N">下一页</a> |</li>
         <li class="right" >
           <a href="010-fork-and-pull.html" title="4.1. Fork + Pull模式"
-             accesskey="P">previous</a> |</li>
+             accesskey="P">上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">4. 工作协同</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.2. 共享版本库</a><ul>
 <li><a class="reference internal" href="#id2">4.2.1. 版本库授权</a></li>
@@ -78,27 +79,27 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>上一个主题</h4>
   <p class="topless"><a href="010-fork-and-pull.html"
-                        title="previous chapter">4.1. Fork + Pull模式</a></p>
-  <h4>Next topic</h4>
+                        title="上一章">4.1. Fork + Pull模式</a></p>
+  <h4>下一个主题</h4>
   <p class="topless"><a href="030-organization.html"
-                        title="next chapter">4.3. 组织和团队</a></p>
-  <h3>This Page</h3>
+                        title="下一章">4.3. 组织和团队</a></p>
+  <h3>本页</h3>
   <ul class="this-page-menu">
     <li><a href="../sources/04-work-with-others/020-shared-repo.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">显示源代码</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>快速搜索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="搜索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    输入相关的模块，术语，类或者函数名称进行搜索
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -111,10 +112,10 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>4.2. 共享版本库<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>4.2. 共享版本库<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>除了独具特色的“Fork + Pull”的分布式工作模式，GitHub同样支持传统的集中式协同工作模式。</p>
 <div class="section" id="id2">
-<h2>4.2.1. 版本库授权<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.1. 版本库授权<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GitHub可以通过多种途径为版本库授权，让版本库成为多人共享的版本库，从而让项目管理者围绕项目创建一个核心开发团队。下面以gotgithub账号下的helloworld版本库为例，介绍如何设置版本库的多人共享。</p>
 <p>进入 <tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt> 项目的管理界面，点击左侧导航条中的“Collaborators”，可以查看及添加项目的合作者，如图4-17所示。</p>
 <div class="figure">
@@ -134,7 +135,7 @@
 <p>用户jiangxin对版本库 <tt class="docutils literal"><span class="pre">gotgithub/helloworld</span></tt> 拥有写入权限。和 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 用户稍有区别的是没有管理员权限。</p>
 </div>
 <div class="section" id="id3">
-<h2>4.2.2. 与传统集中式工作模式的异同<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.2. 与传统集中式工作模式的异同<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>传统的集中式版本控制系统，如CVS、SVN，所有用户都访问同一个版本库。采用集中式工作模式的GitHub用户同样也是访问同一版本库。</p>
 <p>对于由用户gotgithub创建的 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 版本库，添加了合作者ossxp-com和jiangxin，三个人克隆版本库使用如下命令。</p>
 <ul>
@@ -164,7 +165,7 @@
 <p>而其他人就没有这么幸运了。Git的推送操作正如SVN等集中式版本控制系统的提交操作那样，先执行者成功，后执行者糟糕（要解决冲突，自动或手动）。</p>
 </div>
 <div class="section" id="id4">
-<h2>4.2.3. 合并后推送<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.3. 合并后推送<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>当用户gotgithub完成推送后，共享版本库以及三个用户的本地版本库如图4-21所示。其中共享版本库变得和gotgithub用户的本地版本库相一致。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="images/work-with-others/helloworld-push.png"><img alt="images/work-with-others/helloworld-push.png" src="images/work-with-others/helloworld-push.png" /></a>
@@ -219,7 +220,7 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
 </div>
 </div>
 <div class="section" id="id5">
-<h2>4.2.4. 合并还是变基<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.4. 合并还是变基<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>合并会产生除了合并双方（或多方）所有提交外的一个新提交，这一方面会增加代码审核的负担，另一方面本地多个提交混杂一起与远程分支合并可能会比本地提交逐一迁移式合并更加困难。因此在特定情况下，变基是取代合并的一个选择。</p>
 <p>图4-26展示用户jiangxin若采用合并和变基两种不同方案时本地版本库 <tt class="docutils literal"><span class="pre">master</span></tt> 分支的情况。图的左侧是合并，右侧是变基。</p>
 <div class="figure">
@@ -256,17 +257,17 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
         <li class="right" >
           <a href="030-organization.html" title="4.3. 组织和团队"
-             >next</a> |</li>
+             >下一页</a> |</li>
         <li class="right" >
           <a href="010-fork-and-pull.html" title="4.1. Fork + Pull模式"
-             >previous</a> |</li>
+             >上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" >4. 工作协同</a> &raquo;</li> 
       </ul>
@@ -276,9 +277,9 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
       <br />
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
-        &copy; Copyright 2011, Jiang Xin.
-      Last updated on 2011/12/08.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/08。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
   </body>

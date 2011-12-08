@@ -28,6 +28,7 @@
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../static/translations.js"></script>
     <link rel="top" title="GotGitHub" href="../index.html" />
     <link rel="up" title="3. 项目托管" href="index.html" />
     <link rel="next" title="4. 工作协同" href="../04-work-with-others/index.html" />
@@ -50,24 +51,24 @@
     </div>
 
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
         <li class="right" >
           <a href="../04-work-with-others/index.html" title="4. 工作协同"
-             accesskey="N">next</a> |</li>
+             accesskey="N">下一页</a> |</li>
         <li class="right" >
           <a href="040-repo-hooks.html" title="3.4. 版本库钩子扩展"
-             accesskey="P">previous</a> |</li>
+             accesskey="P">上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">3. 项目托管</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">內容目录</a></h3>
   <ul>
 <li><a class="reference internal" href="#">3.5. 建立主页</a><ul>
 <li><a class="reference internal" href="#id2">3.5.1. 创建个人主页</a></li>
@@ -78,27 +79,27 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>上一个主题</h4>
   <p class="topless"><a href="040-repo-hooks.html"
-                        title="previous chapter">3.4. 版本库钩子扩展</a></p>
-  <h4>Next topic</h4>
+                        title="上一章">3.4. 版本库钩子扩展</a></p>
+  <h4>下一个主题</h4>
   <p class="topless"><a href="../04-work-with-others/index.html"
-                        title="next chapter">4. 工作协同</a></p>
-  <h3>This Page</h3>
+                        title="下一章">4. 工作协同</a></p>
+  <h3>本页</h3>
   <ul class="this-page-menu">
     <li><a href="../sources/03-project-hosting/050-homepage.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">显示源代码</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>快速搜索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="搜索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    输入相关的模块，术语，类或者函数名称进行搜索
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -111,10 +112,10 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>3.5. 建立主页<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>3.5. 建立主页<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>很多开源项目托管平台都支持为托管的项目建立主页，但主页的维护方式都没有GitHub这么酷。大多数托管平台无非是开放一个FTP或类似服务，用户把制作好的网页或脚本上传了事，而GitHub采用创建特殊名称的Git版本库或在Git库中建立特别的分支实现主页的创建。</p>
 <div class="section" id="id2">
-<h2>3.5.1. 创建个人主页<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>3.5.1. 创建个人主页<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>为自己在GitHub的账号创建主页很容易，只要在托管空间下创建一个名为 <tt class="docutils literal"><span class="pre">&lt;userid&gt;.github.com</span></tt> 的版本库，在其中提交网站页面即可。以 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 用户为例。</p>
 <ul>
 <li><p class="first">创建一个名为 <tt class="docutils literal"><span class="pre">gotgithub.github.com</span></tt> 的Git版本库。</p>
@@ -143,7 +144,7 @@ $ git commit -m "Homepage test version."</pre>
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>3.5.2. 创建项目主页<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>3.5.2. 创建项目主页<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>GitHub会为每个用户分配一个子域名作为用户主页，同样用户创建的每一个项目也会在用户主页下创建一个子网站。例如 <tt class="docutils literal"><span class="pre">gotgithub</span></tt> 用户创建的 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 项目经过简单的定制，会在地址 <tt class="docutils literal"><span class="pre">http://gotgithub.github.com/helloworld/</span></tt> 下创建项目首页。为项目建立自定义项目首页只需要在项目版本库中创建一个名为 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 的分支，并把网页提交到该分支即可。</p>
 <p>如果本地尚未建立 <tt class="docutils literal"><span class="pre">helloworld</span></tt> 版本库克隆，执行如下命令。</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:gotgithub/helloworld.git
@@ -220,7 +221,7 @@ $ git clone -b gh-pages origin/gh-pages</pre>
 </div>
 </div>
 <div class="section" id="id4">
-<h2>3.5.3. 使用专有域名<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>3.5.3. 使用专有域名<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>无论是用户主页还是项目主页，除了使用 <tt class="docutils literal"><span class="pre">github.com</span></tt> 下的子域名访问之外，还可以使用指定的专有域名。实现起来也非常简单，只要在 <tt class="docutils literal"><span class="pre">master</span></tt> 分支（用户主页所在版本库）或 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> 分支（项目版本库）的根目录下检入一个名为 <tt class="docutils literal"><span class="pre">CNAME</span></tt> 的文件，内容为相应的专有域名。</p>
 <p>例如用户拥有的专有域名为 <tt class="docutils literal"><span class="pre">example.com</span></tt> ，希望访问 <tt class="docutils literal"><span class="pre">example.com</span></tt> 时实际得到的是 <tt class="docutils literal"><span class="pre">gotgithub.github.com</span></tt> 网页的内容。只需进行如下操作：</p>
 <ul class="simple">
@@ -231,7 +232,7 @@ $ git clone -b gh-pages origin/gh-pages</pre>
 <p>看一个实际的例子： <a class="reference external" href="http://github.com/mojombo/mojombo.github.com/">http://github.com/mojombo/mojombo.github.com/</a> → <a class="reference external" href="http://tom.preston-werner.com/">http://tom.preston-werner.com/</a> 。</p>
 </div>
 <div class="section" id="jekyll">
-<h2>3.5.4. 使用Jekyll维护网站<a class="headerlink" href="#jekyll" title="Permalink to this headline">¶</a></h2>
+<h2>3.5.4. 使用Jekyll维护网站<a class="headerlink" href="#jekyll" title="永久链接至标题">¶</a></h2>
 <p>Jekyll是由Tom Preston-Werner（GitHub创始人之一）开发的静态网站生成软件，支持博客及网页模版。使用Jekyll，可以直接使用Markdown或其他标记语言撰写页面及博客，当GitHub托管的版本库更新后，GitHub会自动运行Jekyll将标记语言撰写的文件转换为网页。</p>
 <p>Jekyll用Ruby语言开发，项目在GitHub的托管地址： <a class="reference external" href="http://github.com/mojombo/jekyll/">http://github.com/mojombo/jekyll/</a> ，专有的URL地址为： <a class="reference external" href="http://jekyllrb.com/">http://jekyllrb.com/</a> 。安装Jekyll最简单的方法是通过RubyGems安装，会自动将Jekyll依赖的directory_watcher、liquid、open4、maruku和classifier等Gem包一并安装。</p>
 <div class="highlight-python"><pre>$ gem install jekyll</pre>
@@ -309,17 +310,17 @@ pygments: true</pre>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>导航</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
         <li class="right" >
           <a href="../04-work-with-others/index.html" title="4. 工作协同"
-             >next</a> |</li>
+             >下一页</a> |</li>
         <li class="right" >
           <a href="040-repo-hooks.html" title="3.4. 版本库钩子扩展"
-             >previous</a> |</li>
+             >上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" >3. 项目托管</a> &raquo;</li> 
       </ul>
@@ -329,9 +330,9 @@ pygments: true</pre>
       <br />
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
-        &copy; Copyright 2011, Jiang Xin.
-      Last updated on 2011/12/08.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+        &copy; Copyright 2011, 蒋鑫。
+      最后更新于 2011/12/08。
+      使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
   </body>
