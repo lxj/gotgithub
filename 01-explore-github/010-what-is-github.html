@@ -102,8 +102,9 @@
             
   <div class="section" id="github">
 <h1>1.1. 什么是GitHub<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h1>
-<p>GitHub，网址 <a class="reference external" href="https://github.com/">https://github.com/</a> ，是一个开源软件项目的托管平台，因为只使用Git作为唯一的版本库格式进行版本库托管，故名GitHub。GitHub的注册用户已经接近百万，托管的版本库数量已超两百万，其中不乏知名的开源项目，如：Ruby on Rails <a class="footnote-reference" href="#id11" id="id1">[1]</a> ，Hibernate <a class="footnote-reference" href="#id12" id="id2">[2]</a> ，phpBB <a class="footnote-reference" href="#id13" id="id3">[3]</a> ，jQuery <a class="footnote-reference" href="#id14" id="id4">[4]</a> ，Prototype <a class="footnote-reference" href="#id15" id="id5">[5]</a> ，Homebrew <a class="footnote-reference" href="#id16" id="id6">[6]</a> 等。</p>
-<p>GitHub于2008年4月10日正式发布 <a class="footnote-reference" href="#id17" id="id7">[7]</a> ，相比于始于1999年的SourceForge <a class="footnote-reference" href="#id18" id="id8">[8]</a> 和2005年的GoogleCode <a class="footnote-reference" href="#id19" id="id9">[9]</a> ，GitHub后来者居上，从代码提交数量上看，GitHub已经超越其前辈 <a class="footnote-reference" href="#id20" id="id10">[10]</a> ，如图1-1所示。</p>
+<p>GitHub，网址 <a class="reference external" href="https://github.com/">https://github.com/</a> ，是一个提供开源或私有软件项目托管的平台，因为只支持Git作为唯一的版本库格式进行托管，故名GitHub。</p>
+<p>GitHub的注册用户已经超过百万 <a class="footnote-reference" href="#id12" id="id1">[1]</a> ，托管的版本库数量已超三百万，其中不乏知名的开源项目，如：Ruby on Rails <a class="footnote-reference" href="#id13" id="id2">[2]</a> 、Hibernate <a class="footnote-reference" href="#id14" id="id3">[3]</a> 、phpBB <a class="footnote-reference" href="#id15" id="id4">[4]</a> 、jQuery <a class="footnote-reference" href="#id16" id="id5">[5]</a> 、Prototype <a class="footnote-reference" href="#id17" id="id6">[6]</a> 、Homebrew <a class="footnote-reference" href="#id18" id="id7">[7]</a> 等。</p>
+<p>GitHub于2008年4月10日正式发布 <a class="footnote-reference" href="#id19" id="id8">[8]</a> ，相比于始于1999年的SourceForge <a class="footnote-reference" href="#id20" id="id9">[9]</a> 和2005年的GoogleCode <a class="footnote-reference" href="#id21" id="id10">[10]</a> ，GitHub后来者居上。以2011年的数据从代码提交数量上看，GitHub已经超越其前辈 <a class="footnote-reference" href="#id22" id="id11">[11]</a> ，如图1-1所示。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../images/survival-of-the-forges.png"><img alt="../images/survival-of-the-forges.png" src="../images/survival-of-the-forges.png" /></a>
 <p class="caption">图1-1：开源项目托管平台提交数量对照</p>
@@ -115,7 +116,7 @@
 <p class="caption">图1-2：使用集中式版本控制系统</p>
 </div>
 <p>Git等分布式版本控制系统的出现，彻底颠覆了原有代码管理的管理模式和组织架构。使用Git，不再需要唯一的、集中式的版本库，而是每个开发者本地都拥有一份完整的版本库克隆。Git并不排斥集中式的使用模式，但更倾向于将集中式模式下的版本库称为共享版本库，核心开发团队的成员可以将自己本地版本库的提交推送到共享版本库上。</p>
-<p>使用Git做版本控制，如图1-3所示，核心开发团队非常“高兴”，因为他们和共享版本库之间不必一直保持连接状态，诸如查看日志、提交、创建分支等几乎全部操作都（脱离网络）在本地的版本库中完成。项目贡献者（非核心成员）也不再那么沮丧，因为版本库人人皆可更改（当然是对本地版本库而言）。稍微让贡献者感到困难的就是如何将自己的改动被核心开发团队所了解并接纳。Git提供了多种途径，一个方法是先用 <tt class="docutils literal"><span class="pre">git-format-patch</span></tt> 命令将本地提交转换为补丁文件或补丁文件序列，再通过邮件发送给核心开发团队。另外一个办法就是搭建一个自己专有的共享版本库，让核心团队的开发者到自己共享的版本库来抓取（Pull）。自己动手搭建Git服务器建立共享版本库是一个难点，在我的
+<p>使用Git做版本控制，如图1-3所示，核心开发团队非常“高兴”，因为他们和共享版本库之间不必一直保持连接状态，诸如查看日志、提交、创建分支等几乎全部操作都（脱离网络）在本地的版本库中完成。项目贡献者（非核心成员）也不再那么沮丧，因为版本库人人皆可更改（当然是对本地版本库而言）。稍微让贡献者感到困难的就是如何将自己的改动被核心开发团队所了解并接纳。Git提供了多种途径，一个方法是先用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">format-patch</span></tt> 命令将本地提交转换为补丁文件或补丁文件序列，再通过邮件发送给核心开发团队。另外一个办法就是搭建一个自己专有的共享版本库，让核心团队的开发者到自己共享的版本库来抓取（Pull）。自己动手搭建Git服务器建立共享版本库是一个难点，在我的
 《Git权威指南》一书中花了七个章节来介绍，掌握起来有一定难度。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="images/explore-github/git-workflow.png"><img alt="images/explore-github/git-workflow.png" src="images/explore-github/git-workflow.png" /></a>
@@ -127,64 +128,70 @@
 <p class="caption">图1-4：GitHub的协同模式</p>
 </div>
 <hr class="docutils" />
-<table class="docutils footnote" frame="void" id="id11" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://github.com/rails/rails">https://github.com/rails/rails</a></td></tr>
-</tbody>
-</table>
 <table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://github.com/hibernate">https://github.com/hibernate</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://github.com/blog/936-one-million">https://github.com/blog/936-one-million</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id13" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://github.com/phpbb/phpbb3">https://github.com/phpbb/phpbb3</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://github.com/rails/rails">https://github.com/rails/rails</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id14" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://github.com/jquery/jquery">https://github.com/jquery/jquery</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://github.com/hibernate">https://github.com/hibernate</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id15" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="https://github.com/sstephenson/prototype">https://github.com/sstephenson/prototype</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://github.com/phpbb/phpbb3">https://github.com/phpbb/phpbb3</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id16" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="https://github.com/mxcl/homebrew">https://github.com/mxcl/homebrew</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="https://github.com/jquery/jquery">https://github.com/jquery/jquery</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="https://github.com/blog/40-we-launched">https://github.com/blog/40-we-launched</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="https://github.com/sstephenson/prototype">https://github.com/sstephenson/prototype</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id18" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td><a class="reference external" href="http://sourceforge.net/">http://sourceforge.net/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="https://github.com/mxcl/homebrew">https://github.com/mxcl/homebrew</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[9]</a></td><td><a class="reference external" href="http://code.google.com/">http://code.google.com/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td><a class="reference external" href="https://github.com/blog/40-we-launched">https://github.com/blog/40-we-launched</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id20" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[10]</a></td><td><a class="reference external" href="http://www.slideshare.net/sogrady/survival-of-the-forges">http://www.slideshare.net/sogrady/survival-of-the-forges</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[9]</a></td><td><a class="reference external" href="http://sourceforge.net/">http://sourceforge.net/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id21" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[10]</a></td><td><a class="reference external" href="http://code.google.com/">http://code.google.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[11]</a></td><td><a class="reference external" href="http://www.slideshare.net/sogrady/survival-of-the-forges">http://www.slideshare.net/sogrady/survival-of-the-forges</a></td></tr>
 </tbody>
 </table>
 </div>
