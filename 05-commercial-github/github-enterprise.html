@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>5.2. GitHub:FI &mdash; GotGitHub</title>
+    <title>5.2. GitHub企业版 &mdash; GotGitHub</title>
     
     <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -32,7 +32,7 @@
     <link rel="top" title="GotGitHub" href="../index.html" />
     <link rel="up" title="5. 付费服务" href="index.html" />
     <link rel="next" title="6. GitHub副产品" href="../06-side-projects/index.html" />
-    <link rel="prev" title="5.1. GitHub收费方案" href="010-non-free-plans.html" /> 
+    <link rel="prev" title="5.1. GitHub收费方案" href="non-free-plans.html" /> 
   </head>
   <body>
     <div id='header'>
@@ -60,7 +60,7 @@
           <a href="../06-side-projects/index.html" title="6. GitHub副产品"
              accesskey="N">下一页</a> |</li>
         <li class="right" >
-          <a href="010-non-free-plans.html" title="5.1. GitHub收费方案"
+          <a href="non-free-plans.html" title="5.1. GitHub收费方案"
              accesskey="P">上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">5. 付费服务</a> &raquo;</li> 
@@ -69,14 +69,14 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>上一个主题</h4>
-  <p class="topless"><a href="010-non-free-plans.html"
+  <p class="topless"><a href="non-free-plans.html"
                         title="上一章">5.1. GitHub收费方案</a></p>
   <h4>下一个主题</h4>
   <p class="topless"><a href="../06-side-projects/index.html"
                         title="下一章">6. GitHub副产品</a></p>
   <h3>本页</h3>
   <ul class="this-page-menu">
-    <li><a href="../sources/05-commercial-github/020-github-fi.txt"
+    <li><a href="../sources/05-commercial-github/github-enterprise.txt"
            rel="nofollow">显示源代码</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -100,38 +100,28 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="github-fi">
-<h1>5.2. GitHub:FI<a class="headerlink" href="#github-fi" title="永久链接至标题">¶</a></h1>
-<p>想要在企业内部架设自己的GitHub服务？答案就是GitHub:FI。</p>
+  <div class="section" id="github">
+<h1>5.2. GitHub企业版<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h1>
+<p>出于隐私或法律原因而不能将代码托管到第三方平台的企业，可能希望在企业内部架设专有的GitHub服务，能做到么？答案就是GitHub企业版（GitHub Enterprise）。</p>
+<p>网址： <a class="reference external" href="https://enterprise.github.com/">https://enterprise.github.com/</a> 。</p>
+<p>GitHub企业版搭建在企业本地网络中，因此企业拥有对版本库和项目完整的控制权限。GitHub企业版包含了GitHub上所有的好东西：提交历史、代码浏览、比较视图、Pull Requests、问题追踪、维基、Gists、组织和团队管理、强大的API，和漂亮的界面，因此会使用GitHub就会使用GitHub企业版。此外企业版还增加了对LDAP和CAS支持功能，以便和企业现有的认证系统整合等等 <a class="footnote-reference" href="#id3" id="id1">[1]</a> 。</p>
+<p>GitHub企业版不像它的前身GitHub:FI <a class="footnote-reference" href="#id4" id="id2">[2]</a> 那样通过下载软件包进行安装和部署，而是提供基于虚拟机的解决方案。即GitHub企业版以OVF虚拟机文件格式发布，可以运行在多种虚拟机平台，如：VMWare、VirtualBox、Oracle VM、Red Hat Enterprise Virtualization和IBM POWER。使用OVF格式让GitHub企业版的部署更加轻松。</p>
+<p>GitHub企业版根据用户数量收取年费，入门级的价格为20用户每年5,000美金。如果用户数少，建议采用付费的GitHub托管账号。购买更多用户许可，访问GitHub企业版网站，那儿有一个报价生成器，如图5-10所示。</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../images/github-fi.png"><img alt="../images/github-fi.png" src="../images/github-fi.png" /></a>
-<p class="caption">图5-10：GitHub:FI</p>
+<a class="reference internal image-reference" href="../images/github-enterprise-pricing.png"><img alt="../images/github-enterprise-pricing.png" src="../images/github-enterprise-pricing.png" /></a>
+<p class="caption">图5-10：GitHub企业版报价生成器</p>
 </div>
-<p>GitHub:FI是GitHub Firewall Install的缩写，含义为在企业的防火墙内部架设GitHub服务。对于那些出于隐私或法律原因而不能将代码托管到第三方平台中的企业，用GitHub:FI在企业内部架设专有GitHub服务，可以在保证数据安全的同时，使用GitHub进行团队协同。</p>
-<p>因为GitHub:FI采用了和GitHub近乎相同的代码，因此会使用GitHub，就会使用GitHub:FI。至于GitHub:FI的部署，因为采用了BitRock的打包和部署方案 <a class="footnote-reference" href="#id4" id="id1">[1]</a> ，所以可以非常方便的在Linux平台（Ubuntu、Debian或Gentoo）上安装。</p>
-<p>GitHub:FI的网站 <a class="footnote-reference" href="#id5" id="id2">[2]</a> 中提供了演示录像，详细介绍了GitHub:FI的安装和使用。图5-11就是演示录像中介绍如何安装的画面。</p>
-<div class="figure">
-<a class="reference internal image-reference" href="../images/github-fi-tour.png"><img alt="../images/github-fi-tour.png" src="../images/github-fi-tour.png" /></a>
-<p class="caption">图5-11：GitHub:FI演示画面</p>
-</div>
-<p>GitHub:FI的购买或试用，访问GitHub:FI网站并和销售人员联系 <a class="footnote-reference" href="#id6" id="id3">[3]</a> 。</p>
 <hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://github.com/blog/978-introducing-github-enterprise">https://github.com/blog/978-introducing-github-enterprise</a></td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://github.com/blog/441-announcing-github-fi">https://github.com/blog/441-announcing-github-fi</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://fi.github.com/tour.html">http://fi.github.com/tour.html</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://fi.github.com/pricing.html">http://fi.github.com/pricing.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>GitHub:FI是GitHub Firewall Install的缩写，含义为在企业的防火墙内部架设GitHub服务，现已被GitHub Enterprise产品替换。</td></tr>
 </tbody>
 </table>
 </div>
@@ -152,7 +142,7 @@
           <a href="../06-side-projects/index.html" title="6. GitHub副产品"
              >下一页</a> |</li>
         <li class="right" >
-          <a href="010-non-free-plans.html" title="5.1. GitHub收费方案"
+          <a href="non-free-plans.html" title="5.1. GitHub收费方案"
              >上一页</a> |</li>
         <li><a href="../index.html">GotGitHub</a> &raquo;</li>
           <li><a href="index.html" >5. 付费服务</a> &raquo;</li> 
@@ -164,7 +154,7 @@
       全部内容以 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 署名-非商业性使用-相同方式共享 3.0 协议发布</a>.
       <br />
         &copy; Copyright 2011, 蒋鑫。
-      最后更新于 2011/12/08。
+      最后更新于 2011/12/09。
       使用 <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2 创建。
 
     </div>
